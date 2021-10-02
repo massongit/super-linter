@@ -1,6 +1,6 @@
 {
   "filters": {},
   "rules": {
-    "date-weekday-mismatch": true
+    "terminology": true
   }
 }
