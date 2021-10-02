@@ -2,7 +2,10 @@
   "filters": {},
   "rules": {
     "no-dead-link": {
-      "ignoreRedirects": true
+      "ignoreRedirects": true,
+      "ignore": [
+        "https://github.com/*"
+      ]
     }
   }
 }
