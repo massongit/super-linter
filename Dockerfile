@@ -332,11 +332,11 @@ RUN wget --tries=5 -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sger
     gnupg \
     php7 php7-curl php7-ctype php7-dom php7-iconv php7-json php7-mbstring \
     php7-openssl php7-phar php7-simplexml php7-tokenizer php-xmlwriter \
-    && rm glibc-${GLIBC_VERSION}.apk \
-    && wget -q --tries=5 -O /tmp/libz.tar.zst https://www.archlinux.org/packages/core/x86_64/zlib/download \
-    && mkdir /tmp/libz \
-    && tar -xvf /tmp/libz.tar.zst -C /tmp/libz --zstd \
-    && mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib \
+    && rm glibc-${GLIBC_VERSION}.apk
+RUN wget -q --tries=5 -O /tmp/libz.tar.zst https://www.archlinux.org/packages/core/x86_64/zlib/download
+RUN mkdir /tmp/libz
+RUN tar -xvf /tmp/libz.tar.zst -C /tmp/libz --zstd
+RUN mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib \
     && rm -rf /tmp/libz /tmp/libz.tar.zst \
     && wget -q --tries=5 -O phive.phar https://phar.io/releases/phive.phar \
     && wget -q --tries=5 -O phive.phar.asc https://phar.io/releases/phive.phar.asc \
