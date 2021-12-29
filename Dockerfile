@@ -335,7 +335,7 @@ RUN wget --tries=5 -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sger
     && rm glibc-${GLIBC_VERSION}.apk \
     && wget -q --tries=5 -O /tmp/libz.tar.zst https://www.archlinux.org/packages/core/x86_64/zlib/download \
     && mkdir /tmp/libz \
-    && tar -xf /tmp/libz.tar.zst -C /tmp/libz --use-compress-program=unzstd \
+    && tar -xf /tmp/libz.tar.zst -C /tmp/libz -I unzstd \
     && mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib \
     && rm -rf /tmp/libz /tmp/libz.tar.zst \
     && wget -q --tries=5 -O phive.phar https://phar.io/releases/phive.phar \
