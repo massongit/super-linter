@@ -395,18 +395,6 @@ lint-commits: build-dev-container-image ## Lint commits
 .PHONY: release-please-dry-run
 release-please-dry-run: build-dev-container-image check-github-token ## Run release-please in dry-run mode to preview the release pull request
 	@echo "Running release-please against branch: ${RELEASE_PLEASE_TARGET_BRANCH}"; \
-	echo docker run \
-    		-v "$(CURDIR):/source-repository" \
-    		${DEV_CONTAINER_URL} \
-    		release-please \
-    		release-pr \
-    		--config-file .github/release-please/release-please-config.json \
-    		--dry-run \
-    		--manifest-file .github/release-please/.release-please-manifest.json \
-    		--repo-url super-linter/super-linter \
-    		--target-branch ${RELEASE_PLEASE_TARGET_BRANCH} \
-    		--fork true \
-    		--trace
 	docker run \
 		-v "$(CURDIR):/source-repository" \
 		${DEV_CONTAINER_URL} \
