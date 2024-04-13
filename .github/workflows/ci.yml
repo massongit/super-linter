@@ -230,7 +230,7 @@ jobs:
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" > .github-personal-access-token
 
-      - run: echo "$GITHUB_ACTION_REPOSITORY"
+      - run: echo "$GITHUB_REPOSITORY"
 
       - name: Generate a preview of the release notes
         run: |
