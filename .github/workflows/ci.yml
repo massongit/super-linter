@@ -232,7 +232,8 @@ jobs:
 
       - run: |
           git remote add forked "https://github.com/${{ github.event.pull_request.head.repo.full_name }}"
-          git fetch forked
+          git fetch forked "${GITHUB_HEAD_REF}"
+          git switch "${GITHUB_HEAD_REF}"
 
       - name: Generate a preview of the release notes
         run: |
