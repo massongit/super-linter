@@ -406,4 +406,5 @@ release-please-dry-run: build-dev-container-image check-github-token ## Run rele
 		--repo-url super-linter/super-linter \
 		--target-branch ${RELEASE_PLEASE_TARGET_BRANCH} \
 		--token "${GITHUB_TOKEN}" \
+		--fork true \
 		--trace
