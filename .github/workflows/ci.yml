@@ -230,6 +230,8 @@ jobs:
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" > .github-personal-access-token
 
+      - run: echo "$GITHUB_HEAD_REF"
+
       - name: Generate a preview of the release notes
         run: |
           make release-please-dry-run
