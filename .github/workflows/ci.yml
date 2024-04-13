@@ -235,6 +235,8 @@ jobs:
           git fetch forked "${GITHUB_HEAD_REF}"
           git switch "${GITHUB_HEAD_REF}"
 
+      - run: cat .github/release-please/release-please-config.json
+
       - name: Generate a preview of the release notes
         run: |
           make release-please-dry-run
