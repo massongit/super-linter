@@ -230,7 +230,9 @@ jobs:
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" > .github-personal-access-token
 
-      - run: echo "${{ github.event.pull_request.head.repo.full_name }}"
+      - run: |
+          git remote add forked "${{ github.event.pull_request.head.repo.full_name }}"
+          git pull forked "${GITHUB_HEAD_REF}"
 
       - name: Generate a preview of the release notes
         run: |
