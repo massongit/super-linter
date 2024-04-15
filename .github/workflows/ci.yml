@@ -111,7 +111,7 @@ jobs:
       - name: Load image
         run: |
           docker load <"/tmp/${{ env.CONTAINER_IMAGE_OUTPUT_IMAGE_NAME }}.tar"
-
+      - run: ls
       - name: Test Local Action (debug log)
         uses: ./
         env:
