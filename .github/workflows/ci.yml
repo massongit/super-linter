@@ -118,7 +118,6 @@ jobs:
           LOG_LEVEL: DEBUG
           CREATE_LOG_FILE: true
           VALIDATE_ALL_CODEBASE: false
-          VALIDATE_ALL_CODEBASE: false
           VALIDATE_EDITORCONFIG: false
           VALIDATE_GITHUB_ACTIONS: false
           VALIDATE_GITLEAKS: false
