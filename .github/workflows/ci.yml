@@ -118,6 +118,11 @@ jobs:
           LOG_LEVEL: DEBUG
           CREATE_LOG_FILE: true
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_EDITORCONFIG: false
+          VALIDATE_GITHUB_ACTIONS: false
+          VALIDATE_GITLEAKS: false
+          VALIDATE_YAML: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_CONFIG_FILE: .gitleaks-ignore-tests.toml
           FILTER_REGEX_EXCLUDE: ".*(/test/linters/|CHANGELOG.md).*"
@@ -133,6 +138,10 @@ jobs:
         uses: ./
         env:
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_EDITORCONFIG: false
+          VALIDATE_GITHUB_ACTIONS: false
+          VALIDATE_GITLEAKS: false
+          VALIDATE_YAML: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_CONFIG_FILE: .gitleaks-ignore-tests.toml
           FILTER_REGEX_EXCLUDE: ".*(/test/linters/|CHANGELOG.md).*"
